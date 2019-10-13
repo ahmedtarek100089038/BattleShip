@@ -195,6 +195,18 @@ public class Player : IEnumerable<Ship>
 		return result;
 	}
 
+	internal SearchResult Search (int row, int col) {
+		SearchResult result = default (SearchResult);
+		result = EnemyGrid.SearchArea (row,col);
+
+		switch (result.Presence) {
+		case Enemy_present.present:
+		case Enemy_present.absent:
+			break;
+		}
+		return result;
+	}
+
 	public virtual void RandomizeDeployment()
 	{
 		bool placementSuccessful = false;

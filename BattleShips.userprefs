@@ -1,15 +1,22 @@
-﻿<Properties StartupItem="BattleShips.csproj">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug-Mac|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="src/GameController.cs">
-    <Files>
-      <File FileName="src/Model/AIPlayer.cs" Line="65" Column="68" />
-      <File FileName="src/Model/AIHardPlayer.cs" Line="209" Column="1" />
-      <File FileName="src/Model/AIMediumPlayer.cs" Line="1" Column="1" />
-      <File FileName="src/GameController.cs" Line="1" Column="1" />
-    </Files>
-  </MonoDevelop.Ide.Workbench>
+﻿<Properties StartupConfiguration="{871B5A90-103A-46A5-BBB9-07C02B9851D1}|Default">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug-Windows|x86" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workbench ActiveDocument="src\Model\Player.cs">
+    <Files>
+      <File FileName="src\DiscoveryController.cs" Line="31" Column="3" />
+      <File FileName="src\GameController.cs" Line="224" Column="24" />
+      <File FileName="src\UtilityFunctions.cs" Line="76" Column="21" />
+      <File FileName="src\GameLogic.cs" Line="17" Column="6" />
+      <File FileName="src\GameResources.cs" Line="174" Column="2" />
+      <File FileName="src\Radar.cs" Line="27" Column="24" />
+      <File FileName="src\Model\Player.cs" Line="203" Column="21" />
+      <File FileName="src\Model\ISeaGrid.cs" Line="42" Column="43" />
+      <File FileName="src\Model\SearchResult.cs" Line="10" Column="31" />
+      <File FileName="src\Model\EnemyPresent.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.BattleShips PreferredExecutionTarget="MonoDevelop.Default" />
 </Properties>
