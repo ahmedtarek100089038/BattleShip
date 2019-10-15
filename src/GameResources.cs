@@ -19,7 +19,8 @@ public static class GameResources
 	private static void LoadImages()
 	{
 		//Backgrounds
-		NewImage("Menu", "main_page.jpg");
+		//NewImage("Menu", "main_page.jpg");
+		NewImage ("Menu","radar3.jpg");
 		NewImage("Discovery", "discover.jpg");
 		NewImage("Deploy", "deploy.jpg");
 
@@ -156,7 +157,8 @@ public static class GameResources
 
 	private static void ShowLoadingScreen()
 	{
-		_Background = SwinGame.LoadBitmap(SwinGame.PathToResource("SplashBack.png", ResourceKind.BitmapResource));
+		_Background = SwinGame.LoadBitmap (SwinGame.PathToResource ("SplashBack.png", ResourceKind.BitmapResource));
+		//_Background = SwinGame.LoadBitmap(SwinGame.PathToResource("radar3.bmp", ResourceKind.BitmapResource));
 		SwinGame.DrawBitmap(_Background, 0, 0);
 		SwinGame.RefreshScreen();
 		SwinGame.ProcessEvents();
