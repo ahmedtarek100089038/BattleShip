@@ -4,7 +4,7 @@
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workbench ActiveDocument="src\HumanPlayer.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="src\GameResources.cs">
     <Files>
       <File FileName="src\DeploymentController.cs" Line="83" Column="69" />
       <File FileName="src\UtilityFunctions.cs" Line="1" Column="1" />
@@ -16,7 +16,7 @@
       <File FileName="src\GameState.cs" Line="1" Column="1" />
       <File FileName="src\HumanPlayer.cs" Line="1" Column="1" />
       <File FileName="src\MenuController.cs" Line="1" Column="1" />
-      <File FileName="src\GameResources.cs" Line="1" Column="1" />
+      <File FileName="src\GameResources.cs" Line="22" Column="42" />
       <File FileName="src\Model\SeaGrid.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
