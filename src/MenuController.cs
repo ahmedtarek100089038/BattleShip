@@ -25,6 +25,8 @@ static class MenuController
 			"PLAY",
 			"SETUP",
 			"SCORES",
+			"MUSIC ON",
+			"MUSIC OFF",
 			"QUIT"
 		},
 		new string[] {
@@ -55,7 +57,9 @@ static class MenuController
 	private const int MAIN_MENU_SETUP_BUTTON = 1;
 	private const int MAIN_MENU_TOP_SCORES_BUTTON = 2;
 
-	private const int MAIN_MENU_QUIT_BUTTON = 3;
+	private const int MAIN_MENU_MUSICON_BUTTON = 3;
+	private const int MAIN_MENU_MUSICOFF_BUTTON = 4;
+	private const int MAIN_MENU_QUIT_BUTTON = 5;
 	private const int SETUP_MENU_EASY_BUTTON = 0;
 	private const int SETUP_MENU_MEDIUM_BUTTON = 1;
 	private const int SETUP_MENU_HARD_BUTTON = 2;
@@ -269,6 +273,12 @@ static class MenuController
 			case MAIN_MENU_TOP_SCORES_BUTTON:
 				GameController.AddNewState(GameState.ViewingHighScores);
 				break;
+			case MAIN_MENU_MUSICON_BUTTON:
+			SwinGame.PlayMusic (GameResources.GameMusic ("Background"));
+			break;
+			case MAIN_MENU_MUSICOFF_BUTTON:
+			SwinGame.StopMusic();
+			break;
 			case MAIN_MENU_QUIT_BUTTON:
 				GameController.EndCurrentState();
 				break;
