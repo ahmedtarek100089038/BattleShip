@@ -30,6 +30,7 @@ public static class GameResources
 		NewImage("PlayButton", "deploy_play_button.png");
 		NewImage("RandomButton", "deploy_randomize_button.png");
 
+
 		//Ships
 		int i = 0;
 		for (i = 1; i <= 5; i++) {
@@ -50,7 +51,7 @@ public static class GameResources
 		NewSound("Sink", "sink.wav");
 		NewSound("Siren", "siren.wav");
 		NewSound("Miss", "watershot.wav");
-		NewSound("Winner", "winner.wav");
+		NewSound ("Winner", "win.wav");
 		NewSound("Lose", "lose.wav");
 	}
 
