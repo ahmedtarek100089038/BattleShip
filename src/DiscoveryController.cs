@@ -6,11 +6,14 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using SwinGameSDK;
 
+
 /// <summary>
 /// The battle phase is handled by the DiscoveryController.
 /// </summary>
 static class DiscoveryController
 {
+	private const int MESSAGE_LEFT = 585;
+	private const int MESSAGE_TOP = 568;
 
 	/// <summary>
 	/// Handles input during the discovery phase of the game.
@@ -74,6 +77,11 @@ static class DiscoveryController
 		SwinGame.DrawText(GameController.HumanPlayer.Shots.ToString(), Color.White, GameResources.GameFont("Menu"), SCORES_LEFT, SHOTS_TOP);
 		SwinGame.DrawText(GameController.HumanPlayer.Hits.ToString(), Color.White, GameResources.GameFont("Menu"), SCORES_LEFT, HITS_TOP);
 		SwinGame.DrawText(GameController.HumanPlayer.Missed.ToString(), Color.White, GameResources.GameFont("Menu"), SCORES_LEFT, SPLASH_TOP);
+		/// <summary>
+		/// Edited by : Eva 
+		/// An instruction at the bottom of the grid board
+		/// </summary>
+		SwinGame.DrawText ("Press Esc to surrender.", Color.Yellow, GameResources.GameFont ("Courier"), MESSAGE_LEFT, MESSAGE_TOP);
 	}
 
 }
