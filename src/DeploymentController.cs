@@ -33,6 +33,14 @@ static class DeploymentController
 	private const int DIR_BUTTONS_WIDTH = 47;
 
 	private const int TEXT_OFFSET = 5;
+
+	/// <summary>
+	/// Edited by : Eva Martha
+	/// Position of the instructions for players
+	/// </summary>
+	private const int MESSAGE_LEFT = 500;
+	private const int MESSAGE_TOP = 568;
+
 	private static Direction _currentDirection = Direction.UpDown;
 
 	private static ShipName _selectedShip = ShipName.Tug;
@@ -169,7 +177,12 @@ static class DeploymentController
 
 		SwinGame.DrawBitmap(GameResources.GameImage("RandomButton"), RANDOM_BUTTON_LEFT, TOP_BUTTONS_TOP);
 
+		/// <summary>
+		/// Edited by : Eva Martha
+		/// </summary>
+		SwinGame.DrawText("Press Esc to go back to main menu.", Color.Yellow, GameResources.GameFont("Courier"), MESSAGE_LEFT, MESSAGE_TOP);
 		UtilityFunctions.DrawMessage();
+
 	}
 
 	/// <summary>
