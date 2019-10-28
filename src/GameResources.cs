@@ -7,13 +7,16 @@ using SwinGameSDK;
 
 public static class GameResources
 {
-
+	/// <summary>
+	/// Change menu font size
+	/// author: B'Jorn Sterling
+	/// </summary>
 	private static void LoadFonts()
 	{
 		NewFont("ArialLarge", "arial.ttf", 80);
 		NewFont("Courier", "cour.ttf", 14);
 		NewFont("CourierSmall", "cour.ttf", 8);
-		NewFont("Menu", "ffaccess.ttf", 8);
+		NewFont("Menu", "ffaccess.ttf", 12);
 	}
 
 	private static void LoadImages()
