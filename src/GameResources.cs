@@ -13,10 +13,11 @@ public static class GameResources
 	/// </summary>
 	private static void LoadFonts()
 	{
-		NewFont("ArialLarge", "arial.ttf", 80);
-		NewFont("Courier", "cour.ttf", 14);
+		NewFont("ArialLarge", "arial.ttf", 20);
+		NewFont("Courier", "cour.ttf", 18);
 		NewFont("CourierSmall", "cour.ttf", 8);
-		NewFont("Menu", "BLACK.ttf", 12);
+		NewFont("Menu", "BLACK.ttf", 20);
+		NewFont ("score", "maven_pro_regular.ttf", 24);
 	}
 
 	private static void LoadImages()
@@ -60,7 +61,7 @@ public static class GameResources
 
 	private static void LoadMusic()
 	{
-		NewMusic("Background", "horrordrone.mp3");
+		NewMusic("Background", "battleship.mp3");
 	}
 
 	/// <summary>

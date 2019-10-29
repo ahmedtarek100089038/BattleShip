@@ -12,8 +12,8 @@ using SwinGameSDK;
 /// </summary>
 static class DiscoveryController
 {
-	private const int MESSAGE_LEFT = 585;
-	private const int MESSAGE_TOP = 568;
+	private const int MESSAGE_LEFT = 350;
+	private const int MESSAGE_TOP = 20;
 
 	/// <summary>
 	/// Handles input during the discovery phase of the game.
@@ -81,7 +81,7 @@ static class DiscoveryController
 		/// Edited by : Eva 
 		/// An instruction at the bottom of the grid board
 		/// </summary>
-		SwinGame.DrawText ("Press Esc to surrender.", Color.Yellow, GameResources.GameFont ("Courier"), MESSAGE_LEFT, MESSAGE_TOP);
+		SwinGame.DrawText ("Press  Esc  to  Go Back.", Color.Red, GameResources.GameFont ("Menu") , MESSAGE_LEFT, MESSAGE_TOP);
 	}
 
 }

@@ -38,8 +38,8 @@ static class DeploymentController
 	/// Edited by : Eva Martha
 	/// Position of the instructions for players
 	/// </summary>
-	private const int MESSAGE_LEFT = 500;
-	private const int MESSAGE_TOP = 568;
+	private const int MESSAGE_LEFT = 300;
+	private const int MESSAGE_TOP = 20;
 
 	private static Direction _currentDirection = Direction.UpDown;
 
@@ -180,7 +180,7 @@ static class DeploymentController
 		/// <summary>
 		/// Edited by : Eva Martha
 		/// </summary>
-		SwinGame.DrawText("Press Esc to go back to main menu.", Color.Yellow, GameResources.GameFont("Courier"), MESSAGE_LEFT, MESSAGE_TOP);
+		SwinGame.DrawText("Press  Esc  to  go  back  to  main  menu.", Color.Red, GameResources.GameFont("Menu"), MESSAGE_LEFT, MESSAGE_TOP);
 		UtilityFunctions.DrawMessage();
 
 	}
