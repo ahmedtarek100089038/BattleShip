@@ -81,7 +81,7 @@ static class DiscoveryController
 		/// Edited by : Eva 
 		/// An instruction at the bottom of the grid board
 		/// </summary>
-		SwinGame.DrawText ("Press  Esc  to  Go Back.", Color.Red, GameResources.GameFont ("Menu") , MESSAGE_LEFT, MESSAGE_TOP);
+		SwinGame.DrawText ("Press  Esc  to  Surrender.", Color.Red, GameResources.GameFont ("Menu") , MESSAGE_LEFT, MESSAGE_TOP);
 	}
 
 }
