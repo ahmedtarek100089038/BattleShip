@@ -61,20 +61,20 @@ static class MenuController
 	private const int MAIN_MENU = 0;
 	private const int GAME_MENU = 1;
 	private const int DEPLOY_MENU = 2;
-	private const int SETUP_MENU = 3;
+	private const int LEVEL_MENU = 3;
 
 	private const int MAIN_MENU_PLAY_BUTTON = 0;
-	private const int MAIN_MENU_SETUP_BUTTON = 1;
+	private const int MAIN_MENU_LEVEL_BUTTON = 1;
 	private const int MAIN_MENU_TOP_SCORES_BUTTON = 2;
 
 	private const int MAIN_MENU_MUSICON_BUTTON = 3;
 	private const int MAIN_MENU_MUSICOFF_BUTTON = 4;
 	private const int MAIN_MENU_QUIT_BUTTON = 5;
-	private const int SETUP_MENU_EASY_BUTTON = 0;
-	private const int SETUP_MENU_MEDIUM_BUTTON = 1;
-	private const int SETUP_MENU_HARD_BUTTON = 2;
+	private const int LEVEL_MENU_EASY_BUTTON = 0;
+	private const int LEVEL_MENU_MEDIUM_BUTTON = 1;
+	private const int LEVEL_MENU_HARD_BUTTON = 2;
 
-	private const int SETUP_MENU_EXIT_BUTTON = 3;
+	private const int LEVEL_MENU_EXIT_BUTTON = 3;
 	private const int GAME_MENU_BACK_BUTTON = 0;
 	private const int GAME_MENU_SURRENDER_BUTTON = 1;
 	private const int GAME_MENU_QUIT_BUTTON = 2;
@@ -104,7 +104,7 @@ static class MenuController
 	public static void HandleSetupMenuInput()
 	{
 		bool handled = false;
-		handled = HandleMenuInput(SETUP_MENU, 1, 1);
+		handled = HandleMenuInput(LEVEL_MENU, 1, 1);
 
 		if (!handled) {
 			HandleMenuInput(MAIN_MENU, 0, 0);
@@ -203,7 +203,7 @@ static class MenuController
 		//SwinGame.DrawText("Settings", Color.White, GameFont("ArialLarge"), 50, 50)
 
 		DrawButtons(MAIN_MENU);
-		DrawButtons(SETUP_MENU, 1, 1);
+		DrawButtons(LEVEL_MENU, 1, 1);
 	}
 
 	/// <summary>
@@ -280,7 +280,7 @@ static class MenuController
 			case MAIN_MENU:
 				PerformMainMenuAction(button);
 				break;
-			case SETUP_MENU:
+			case LEVEL_MENU:
 				PerformSetupMenuAction(button);
 				break;
 			case GAME_MENU:
@@ -302,7 +302,7 @@ static class MenuController
 			case MAIN_MENU_PLAY_BUTTON:
 				GameController.StartGame();
 				break;
-			case MAIN_MENU_SETUP_BUTTON:
+			case MAIN_MENU_LEVEL_BUTTON:
 				GameController.AddNewState(GameState.AlteringSettings);
 				break;
 			case MAIN_MENU_TOP_SCORES_BUTTON:
@@ -327,13 +327,13 @@ static class MenuController
 	private static void PerformSetupMenuAction(int button)
 	{
 		switch (button) {
-			case SETUP_MENU_EASY_BUTTON:
+			case LEVEL_MENU_EASY_BUTTON:
 				GameController.SetDifficulty(AIOption.Hard);
 				break;
-			case SETUP_MENU_MEDIUM_BUTTON:
+			case LEVEL_MENU_MEDIUM_BUTTON:
 				GameController.SetDifficulty(AIOption.Hard);
 				break;
-			case SETUP_MENU_HARD_BUTTON:
+			case LEVEL_MENU_HARD_BUTTON:
 				GameController.SetDifficulty(AIOption.Hard);
 				break;
 		}
