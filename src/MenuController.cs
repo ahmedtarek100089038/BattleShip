@@ -30,9 +30,14 @@ static class MenuController
 			"QUIT"
 		},
 		new string[] {
-			"RETURN",
+			"BACK",
 			"SURRENDER",
-			"QUIT"
+			"QUIT GAME"
+		},
+		new string[] {
+			"BACK",
+			"MAIN MENU",
+			"QUIT GAME"
 		},
 		new string[] {
 			"EASY",
@@ -55,8 +60,9 @@ static class MenuController
 	private const int TEXT_OFFSET = 0;
 	private const int MAIN_MENU = 0;
 	private const int GAME_MENU = 1;
+	private const int DEPLOY_MENU = 2;
+	private const int SETUP_MENU = 3;
 
-	private const int SETUP_MENU = 2;
 	private const int MAIN_MENU_PLAY_BUTTON = 0;
 	private const int MAIN_MENU_SETUP_BUTTON = 1;
 	private const int MAIN_MENU_TOP_SCORES_BUTTON = 2;
@@ -69,10 +75,18 @@ static class MenuController
 	private const int SETUP_MENU_HARD_BUTTON = 2;
 
 	private const int SETUP_MENU_EXIT_BUTTON = 3;
-	private const int GAME_MENU_RETURN_BUTTON = 0;
+	private const int GAME_MENU_BACK_BUTTON = 0;
 	private const int GAME_MENU_SURRENDER_BUTTON = 1;
-
 	private const int GAME_MENU_QUIT_BUTTON = 2;
+
+	/// <summary>
+	/// Edited by: Eva
+	/// Adding new game menu in the deploy section
+	/// </summary>'
+	private const int DEPLOY_MENU_BACK_BUTTON = 0;
+	private const int DEPLOY_MENU_MM_BUTTON = 1;
+	private const int DEPLOY_MENU_QUIT_BUTTON = 2;
+
 	private static readonly Color MENU_COLOR = SwinGame.RGBAColor(2, 255, 255, 255);
 
 	private static readonly Color HIGHLIGHT_COLOR = SwinGame.RGBAColor(1, 57, 86, 255);
@@ -106,6 +120,13 @@ static class MenuController
 	public static void HandleGameMenuInput()
 	{
 		HandleMenuInput(GAME_MENU, 0, 0);
+	}
+
+	///Edited by: Eva
+	/// Player can returns to game, return to main menu, or quit entirely
+	public static void HandleDeployMenuInput ()
+	{
+		HandleMenuInput (DEPLOY_MENU, 0, 0);
 	}
 
 	/// <summary>
@@ -161,6 +182,13 @@ static class MenuController
 		//SwinGame.DrawText("Paused", Color.White, GameFont("ArialLarge"), 50, 50)
 
 		DrawButtons(GAME_MENU);
+	}
+
+	///Edited by: Eva
+	/// Draws the Game menu (deploy section) to screen
+	public static void DrawDeployMenu ()
+	{
+		DrawButtons(DEPLOY_MENU);
 	}
 
 	/// <summary>
@@ -258,6 +286,9 @@ static class MenuController
 			case GAME_MENU:
 				PerformGameMenuAction(button);
 				break;
+			case DEPLOY_MENU:
+				PerformDeployMenuAction (button);
+				break;
 		}
 	}
 
@@ -317,7 +348,7 @@ static class MenuController
 	private static void PerformGameMenuAction(int button)
 	{
 		switch (button) {
-			case GAME_MENU_RETURN_BUTTON:
+			case GAME_MENU_BACK_BUTTON:
 				GameController.EndCurrentState();
 				break;
 			case GAME_MENU_SURRENDER_BUTTON:
@@ -329,6 +360,29 @@ static class MenuController
 			case GAME_MENU_QUIT_BUTTON:
 				GameController.AddNewState(GameState.Quitting);
 				break;
+		}
+	}
+
+	/// <summary>
+	/// Edited by: Eva 
+	/// The game menu was clicke, perform the button's action. 
+	/// </summary>
+
+	private static void PerformDeployMenuAction (int button)
+	{
+		switch (button) {
+		case DEPLOY_MENU_BACK_BUTTON:
+			GameController.EndCurrentState ();
+			break;
+		case DEPLOY_MENU_MM_BUTTON:
+			GameController.EndCurrentState ();
+			//end game menu
+			GameController.EndCurrentState ();
+			//end game
+			break;
+		case DEPLOY_MENU_QUIT_BUTTON:
+			GameController.AddNewState (GameState.Quitting);
+			break;
 		}
 	}
 }

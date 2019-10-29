@@ -23,6 +23,10 @@ public enum GameState
 	/// </summary>
 	ViewingGameMenu,
 
+	///Edited by:Eva
+	/// The player is viewing the game menu in deploy section
+	ViewingDeployMenu,
+
 	/// <summary>
 	/// The player is looking at the high scores
 	/// </summary>
