@@ -125,6 +125,7 @@ public static class GameController
 		}
 
 		Audio.PlaySoundEffect(GameResources.GameSound("Hit"));
+		Audio.PlaySoundEffect(GameResources.GameSound("Hit_announce"));
 
 		UtilityFunctions.DrawAnimationSequence();
 	}
@@ -136,6 +137,7 @@ public static class GameController
 		}
 
 		Audio.PlaySoundEffect(GameResources.GameSound("Miss"));
+		Audio.PlaySoundEffect(GameResources.GameSound("Miss_announce"));
 
 		UtilityFunctions.DrawAnimationSequence();
 	}
