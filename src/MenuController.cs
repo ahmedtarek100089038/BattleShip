@@ -23,7 +23,7 @@ static class MenuController
 	private static readonly string[][] _menuStructure = {
 		new string[] {
 			"PLAY",
-			"SETUP",
+			"LEVEL",
 			"SCORES",
 			"MUSIC ON",
 			"MUSIC OFF",
