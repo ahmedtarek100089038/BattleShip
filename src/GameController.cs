@@ -135,9 +135,7 @@ public static class GameController
 		if (showAnimation) {
 			UtilityFunctions.AddSplash(row, column);
 		}
-
 		Audio.PlaySoundEffect(GameResources.GameSound("Miss"));
-		Audio.PlaySoundEffect(GameResources.GameSound("Miss_announce"));
 
 		UtilityFunctions.DrawAnimationSequence();
 	}
@@ -165,6 +163,7 @@ public static class GameController
 			case ResultOfAttack.Destroyed:
 				PlayHitSequence(result.Row, result.Column, isHuman);
 				Audio.PlaySoundEffect(GameResources.GameSound("Sink"));
+				Audio.PlaySoundEffect(GameResources.GameSound("Destroy"));
 
 				break;
 			case ResultOfAttack.GameOver:
