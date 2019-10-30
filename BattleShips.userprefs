@@ -4,7 +4,7 @@
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="src\GameResources.cs">
     <Files>
       <File FileName="src\DeploymentController.cs" Line="60" Column="56" />
       <File FileName="src\UtilityFunctions.cs" Line="259" Column="3" />
