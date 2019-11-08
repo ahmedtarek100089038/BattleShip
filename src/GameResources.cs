@@ -17,7 +17,7 @@ public static class GameResources
 		NewFont("Courier", "cour.ttf", 18);
 		NewFont("CourierSmall", "cour.ttf", 8);
 		NewFont("Menu", "BLACK.ttf", 20);
-		NewFont ("score", "maven_pro_regular.ttf", 24);
+		NewFont ("score", "pirulen_rg.ttf", 24);
 	}
 
 	private static void LoadImages()
