@@ -125,8 +125,8 @@ static class HighScoreController
 
 		if (_Scores.Count == 0)
 			LoadScores();
-		SwinGame.DrawRectangle (Color.DarkGray, true, SCORES_LEFT - 10, SCORES_HEADING - 10, 300, (SCORES_HEADING + 10) * 10);
-		SwinGame.DrawText("   High Scores   ", Color.GreenYellow, GameResources.GameFont("score"), SCORES_LEFT, SCORES_HEADING);
+		SwinGame.DrawRectangle (Color.DarkBlue, true, SCORES_LEFT - 10, SCORES_HEADING - 10, 300, (SCORES_HEADING + 10) * 10);
+		SwinGame.DrawText("   High Scores   ", Color.CadetBlue, GameResources.GameFont("score"), SCORES_LEFT, SCORES_HEADING);
 
 
 		//For all of the scores
@@ -138,9 +138,9 @@ static class HighScoreController
 
 			//for scores 1 - 9 use 01 - 09
 			if (i < 9) {
-				SwinGame.DrawText(" " + (i + 1) + ":   " + s.Name + "   " + s.Value, Color.GreenYellow, GameResources.GameFont("score"), SCORES_LEFT, SCORES_TOP + i * SCORE_GAP);
+				SwinGame.DrawText(" " + (i + 1) + ":   " + s.Name + "   " + s.Value, Color.CadetBlue, GameResources.GameFont("score"), SCORES_LEFT, SCORES_TOP + i * SCORE_GAP);
 			} else {
-				SwinGame.DrawText(i + 1 + ":   " + s.Name + "   " + s.Value, Color.GreenYellow, GameResources.GameFont("score"), SCORES_LEFT, SCORES_TOP + i * SCORE_GAP);
+				SwinGame.DrawText(i + 1 + ":   " + s.Name + "   " + s.Value, Color.CadetBlue, GameResources.GameFont("score"), SCORES_LEFT, SCORES_TOP + i * SCORE_GAP);
 			}
 		}
 	}
@@ -180,7 +180,7 @@ static class HighScoreController
 			int x = 0;
 			x = SCORES_LEFT + SwinGame.TextWidth(GameResources.GameFont("score"), "Name: ");
 
-			SwinGame.StartReadingText(Color.GreenYellow, NAME_WIDTH, GameResources.GameFont("score"), x, ENTRY_TOP);
+			SwinGame.StartReadingText(Color.CadetBlue, NAME_WIDTH, GameResources.GameFont("score"), x, ENTRY_TOP);
 
 			//Read the text from the user
 			while (SwinGame.ReadingText()) {
@@ -188,7 +188,7 @@ static class HighScoreController
 
 				UtilityFunctions.DrawBackground();
 				DrawHighScores();
-				SwinGame.DrawText("Name: ", Color.GreenYellow, GameResources.GameFont("score"), SCORES_LEFT, ENTRY_TOP);
+				SwinGame.DrawText("Name: ", Color.CadetBlue, GameResources.GameFont("score"), SCORES_LEFT, ENTRY_TOP);
 				SwinGame.RefreshScreen();
 			}
 
