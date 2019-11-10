@@ -78,11 +78,12 @@ public static class GameController
 			case AIOption.Medium:
 				_ai = new AIMediumPlayer(_theGame);
 				break;
+			/// hard mode to be added
 			case AIOption.Hard:
-				_ai = new AIHardPlayer(_theGame);
+				_ai = new AIMediumPlayer(_theGame);
 				break;
 			default:
-				_ai = new AIHardPlayer(_theGame);
+				_ai = new AIEasyPlayer(_theGame);
 				break;
 		}
 
