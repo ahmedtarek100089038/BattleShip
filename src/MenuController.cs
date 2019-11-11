@@ -169,8 +169,9 @@ static class MenuController
 	/// </summary>
 	public static void DrawMainMenu()
 	{
-		SwinGame.DrawText ("Hotkeys", Color.LightYellow, GameResources.GameFont ("score"), 15, 20);
-		SwinGame.DrawText ("F2 - Take screenshot", Color.LightYellow, GameResources.GameFont ("score"), 15, 50);
+		SwinGame.DrawText ("Hotkeys", Color.Orange, GameResources.GameFont ("score"), 300, 280);
+		SwinGame.DrawText ("F1 - Toggle fullscreen", Color.Orange, GameResources.GameFont ("score"), 175, 320);
+		SwinGame.DrawText ("F2 - Take screenshot", Color.Orange, GameResources.GameFont ("score"), 175, 370);
 		DrawButtons(MAIN_MENU);
 	}
 
