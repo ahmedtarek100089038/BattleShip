@@ -273,7 +273,12 @@ public static class GameController
 	public static void HandleUserInput()
 	{
 		//Read incoming input events
-		SwinGame.ProcessEvents();
+		SwinGame.ProcessEvents ();
+
+		if (SwinGame.KeyTyped (KeyCode.vk_F2))
+		{
+			SwinGame.TakeScreenshot ("screenshot");
+		}
 
 		switch (CurrentState) {
 			case GameState.ViewingMainMenu:
