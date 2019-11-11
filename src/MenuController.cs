@@ -50,7 +50,7 @@ static class MenuController
 	/// author: B'Jorn Sterling
 	/// </summary>
 	private const int MENU_TOP = 550;
-	private const int MENU_LEFT = 60;
+	private const int MENU_LEFT = 100;
 	private const int MENU_GAP = 5;
 	private const int BUTTON_WIDTH = 100;
 	private const int BUTTON_HEIGHT = 20;
@@ -169,9 +169,8 @@ static class MenuController
 	/// </summary>
 	public static void DrawMainMenu()
 	{
-		//Clears the Screen to Black
-		//SwinGame.DrawText("Main Menu", Color.White, GameFont("ArialLarge"), 50, 50)
-
+		SwinGame.DrawText ("Hotkeys", Color.LightYellow, GameResources.GameFont ("score"), 15, 20);
+		SwinGame.DrawText ("F2 - Take screenshot", Color.LightYellow, GameResources.GameFont ("score"), 15, 50);
 		DrawButtons(MAIN_MENU);
 	}
 
@@ -180,9 +179,6 @@ static class MenuController
 	/// </summary>
 	public static void DrawGameMenu()
 	{
-		//Clears the Screen to Black
-		//SwinGame.DrawText("Paused", Color.White, GameFont("ArialLarge"), 50, 50)
-
 		DrawButtons(GAME_MENU);
 	}
 
@@ -190,6 +186,7 @@ static class MenuController
 	/// Draws the Game menu (deploy section) to screen
 	public static void DrawDeployMenu ()
 	{
+		
 		DrawButtons(DEPLOY_MENU);
 	}
 
