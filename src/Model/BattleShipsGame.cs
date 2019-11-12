@@ -20,7 +20,7 @@ public class BattleShipsGame
 	/// </summary>
 	/// <param name="sender">the game sending the notification</param>
 	/// <param name="result">the result of the attack</param>
-	public delegate void AttackCompletedHandler(object sender, AttackResult result);
+	public delegate void AttackCompletedHandler (object sender, AttackResult result);
 
 	/// <summary>
 	/// The AttackCompleted event is raised when an attack has completed.
@@ -30,7 +30,7 @@ public class BattleShipsGame
 	/// </remarks>
 	public event AttackCompletedHandler AttackCompleted;
 
-	private Player[] _players = new Player[3];
+	private Player [] _players = new Player [3];
 
 	private int _playerIndex = 0;
 	/// <summary>
@@ -40,7 +40,7 @@ public class BattleShipsGame
 	/// <returns>The current player</returns>
 	/// <remarks>This value will switch between the two players as they have their attacks</remarks>
 	public Player Player {
-		get { return _players[_playerIndex]; }
+		get { return _players [_playerIndex]; }
 	}
 
 	/// <summary>
@@ -48,15 +48,15 @@ public class BattleShipsGame
 	/// that the AI player deploys all ships
 	/// </summary>
 	/// <param name="p"></param>
-	public void AddDeployedPlayer(Player p)
+	public void AddDeployedPlayer (Player p)
 	{
-		if (_players[0] == null) {
-			_players[0] = p;
-		} else if (_players[1] == null) {
-			_players[1] = p;
-			CompleteDeployment();
+		if (_players [0] == null) {
+			_players [0] = p;
+		} else if (_players [1] == null) {
+			_players [1] = p;
+			CompleteDeployment ();
 		} else {
-			throw new ApplicationException("You cannot add another player, the game already has two players.");
+			throw new ApplicationException ("You cannot add another player, the game already has two players.");
 		}
 	}
 
@@ -64,10 +64,10 @@ public class BattleShipsGame
 	/// Assigns each player the other's grid as the enemy grid. This allows each player
 	/// to examine the details visable on the other's sea grid.
 	/// </summary>
-	private void CompleteDeployment()
+	private void CompleteDeployment ()
 	{
-		_players[0].Enemy = new SeaGridAdapter(_players[1].PlayerGrid);
-		_players[1].Enemy = new SeaGridAdapter(_players[0].PlayerGrid);
+		_players [0].Enemy = new SeaGridAdapter (_players [1].PlayerGrid);
+		_players [1].Enemy = new SeaGridAdapter (_players [0].PlayerGrid);
 	}
 
 	/// <summary>
@@ -77,25 +77,31 @@ public class BattleShipsGame
 	/// <param name="row">the row fired upon</param>
 	/// <param name="col">the column fired upon</param>
 	/// <returns>The result of the attack</returns>
-	public AttackResult Shoot(int row, int col)
+	public AttackResult Shoot (int row, int col)
 	{
-		AttackResult newAttack = default(AttackResult);
+		AttackResult newAttack = default (AttackResult);
 		int otherPlayer = (_playerIndex + 1) % 2;
 
-		newAttack = Player.Shoot(row, col);
+		newAttack = Player.Shoot (row, col);
 
 		//Will exit the game when all players ships are destroyed
-		if (_players[otherPlayer].IsDestroyed) {
-			newAttack = new AttackResult(ResultOfAttack.GameOver, newAttack.Ship, newAttack.Text, row, col);
+		if (_players [otherPlayer].IsDestroyed) {
+			newAttack = new AttackResult (ResultOfAttack.GameOver, newAttack.Ship, newAttack.Text, row, col);
 		}
 
 		if (AttackCompleted != null) {
-			AttackCompleted(this, newAttack);
+			AttackCompleted (this, newAttack);
 		}
 
 		//change player if the last hit was a miss
-		if (newAttack.Value == ResultOfAttack.Miss) {
-			_playerIndex = otherPlayer;
+		for (int i = 0; i < 9; i++){
+			if (row == GameController.Mine [i].X & col == GameController.Mine [i].Y){
+				_playerIndex = otherPlayer;
+				break;
+			}
+			else if (newAttack.Value == ResultOfAttack.Miss && i == 9) {
+				_playerIndex = otherPlayer;
+			}
 		}
 
 		return newAttack;

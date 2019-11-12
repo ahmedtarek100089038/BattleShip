@@ -41,6 +41,8 @@ public static class GameResources
 			NewImage("ShipLR" + i, "ship_deploy_horiz_" + i + ".png");
 			NewImage("ShipUD" + i, "ship_deploy_vert_" + i + ".png");
 		}
+		//New images
+		NewImage ("Mine","bomb.png");
 
 		//Explosions
 		NewImage("Explosion", "explosion.png");

@@ -16,6 +16,8 @@ public static class GameController
 
 	private static BattleShipsGame _theGame;
 	private static Player _human;
+	private static Mines[] _mine;
+	private static int x_row, y_col;
 
 	private static AIPlayer _ai;
 
@@ -30,6 +32,11 @@ public static class GameController
 	/// <returns>The current state</returns>
 	public static GameState CurrentState {
 		get { return _state.Peek(); }
+	}
+
+	public static Mines[] Mine { 
+		get { return _mine; }
+		set { _mine = value;}
 	}
 
 	/// <summary>
@@ -81,6 +88,9 @@ public static class GameController
 			/// hard mode to be added
 			case AIOption.Hard:
 				_ai = new AIMediumPlayer(_theGame);
+				for (int i = 0; i < 9; i++) {
+					_mine [i] = new Mines ();
+				}
 				break;
 			default:
 				_ai = new AIEasyPlayer(_theGame);
@@ -136,9 +146,14 @@ public static class GameController
 		if (showAnimation) {
 			UtilityFunctions.AddSplash(row, column);
 		}
-
-		Audio.PlaySoundEffect(GameResources.GameSound("Miss"));
-
+		for (int i = 0; i < 9; i++) {
+			if (row == Mine[i].X & column == Mine[i].Y & Mine [i].Hit == true) {
+				Audio.PlaySoundEffect (GameResources.GameSound ("Hit"));
+				break;
+			} else {
+				Audio.PlaySoundEffect (GameResources.GameSound ("Miss"));
+			}
+		}
 		UtilityFunctions.DrawAnimationSequence();
 	}
 
@@ -189,6 +204,13 @@ public static class GameController
 				break;
 			case ResultOfAttack.Miss:
 				PlayMissSequence(result.Row, result.Column, isHuman);
+				for (int i = 0; i < 9; i++) {
+					if (result.Row == _mine [i].X){
+						if (result.Column == _mine [i].Y) {
+							_mine [i].Hit = true;
+						}
+					}
+				}
 				break;
 			case ResultOfAttack.ShotAlready:
 				Audio.PlaySoundEffect(GameResources.GameSound("Error"));
@@ -226,6 +248,8 @@ public static class GameController
 		AttackResult result = default(AttackResult);
 		result = _theGame.Shoot(row, col);
 		CheckAttackResult(result);
+		x_row = row;
+		y_col = col;
 	}
 
 	/// <summary>

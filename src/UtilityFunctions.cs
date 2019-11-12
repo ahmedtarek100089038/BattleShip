@@ -26,6 +26,7 @@ static class UtilityFunctions
 	private static readonly Color SMALL_SEA = SwinGame.RGBAColor(6, 60, 94, 255);
 	private static readonly Color SMALL_SHIP = Color.Gray;
 	private static readonly Color SMALL_MISS = SwinGame.RGBAColor(1, 147, 220, 255);
+	private static readonly Color MINE = Color.Black;
 
 	private static readonly Color SMALL_HIT = SwinGame.RGBAColor(169, 24, 37, 255);
 	private static readonly Color LARGE_SEA = SwinGame.RGBAColor(6, 60, 94, 255);
@@ -138,11 +139,17 @@ static class UtilityFunctions
 						break;
 					//If small Then fillColor = _SMALL_SHIP Else fillColor = _LARGE_SHIP
 					case TileView.Miss:
-						if (small)
-							fillColor = SMALL_MISS;
-						else
+					if (small)
+							for (int i = 0; i < 9; i++) {
+								if (row == GameController.Mine [i].X & col == GameController.Mine [i].Y & GameController.Mine [i].Hit == true) {
+									fillColor = MINE;
+									break;
+								}
+								if (i == 9 & GameController.Mine [i].Hit == false)
+									fillColor = SMALL_MISS;
+								} else
 							fillColor = LARGE_MISS;
-						break;
+							break;
 					case TileView.Hit:
 						if (small)
 							fillColor = SMALL_HIT;
