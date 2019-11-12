@@ -15,7 +15,8 @@ public enum ShipName
 	Submarine = 2,
 	Destroyer = 3,
 	Battleship = 4,
-	AircraftCarrier = 5
+	AircraftCarrier = 5,
+	Mine = 6
 }
 
 

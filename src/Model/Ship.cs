@@ -79,7 +79,11 @@ public class Ship
 		_tiles = new List<Tile>();
 
 		//gets the ship size from the enumarator
-		_sizeOfShip = (int)_shipName;
+		if (_shipName == ShipName.Mine) {
+			_sizeOfShip = 1;
+		} else { 
+			_sizeOfShip = (int)_shipName;
+		}
 	}
 
 	/// <summary>
